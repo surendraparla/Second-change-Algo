@@ -64,13 +64,14 @@ int Clock_algo(string sq,int frame_size){
 }
 
 // Main Function
-int main() {
-	string s = "";
-	int pgf = 0,frame_size = 0;
-	cout<<"Enter the string of sequence"<<endl;
-	cin>>s;
-	cout<<"Enter the frame size"<<endl;
-	cin>>frame_size;
+int main(int argc, char* argv[])
+{
+    string filename(argv[1]);
+    int frameSize = stoi(argv[2]);
+    ifstream t(filename);
+    string str((istreambuf_iterator<char>(t)),
+                 istreambuf_iterator<char>());
+	int pgf = 0;
 	pgf = Clock_algo(s,frame_size);
 	cout<<"No of page faults is: "<<pgf<<endl;
 	return 0;
