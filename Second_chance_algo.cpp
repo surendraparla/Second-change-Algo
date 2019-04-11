@@ -69,7 +69,7 @@ int main(int argc, char* argv[])
     string filename(argv[1]);
     int frameSize = stoi(argv[2]);
     ifstream t(filename);
-    string str((istreambuf_iterator<char>(t)),
+    string s((istreambuf_iterator<char>(t)),
                  istreambuf_iterator<char>());
 	int pgf = 0;
 	pgf = Clock_algo(s,frame_size);
